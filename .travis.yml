@@ -1,0 +1,4 @@
+services: memcache
+language: go
+install: go get -d -v && go build -v
+script:  go test -v
