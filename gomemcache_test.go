@@ -18,7 +18,7 @@ const (
 var memc *Memcache
 
 func TestDial(t *testing.T) {
-	c, err := Dial("127.0.0.1:11211")
+	c, err := Dial("localhost:11211")
 	assertNoError(t, err)
 	err = c.Close()
 	assertNoError(t, err)
@@ -237,7 +237,7 @@ func assertGet(t *testing.T, key string, expectedValue string) {
 }
 
 func connect(t *testing.T) {
-	connection, err := Connect("127.0.0.1", 11211)
+	connection, err := Connect("localhost", 11211)
 	assertNoError(t, err)
 	memc = connection
 }
